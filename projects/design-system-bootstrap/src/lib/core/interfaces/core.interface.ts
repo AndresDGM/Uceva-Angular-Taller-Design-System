@@ -77,3 +77,19 @@ export interface NavbarIconConfig {
  * - `thumbnail` aplica la clase `img-thumbnail` (borde redondeado)
  */
 export type ImageType = 'fluid' | 'thumbnail';
+
+/**
+ * Opción para representar un elemento dentro de un `<select>`.
+ */
+export interface SelectOption {
+    /** Valor asociado a la opción */
+    value: string;
+
+    /** Texto visible de la opción */
+    label: string;
+}
+
+/**
+ * Tamaños disponibles para el select según Bootstrap.
+ */
+export type SelectSize = 'sm' | 'lg';
