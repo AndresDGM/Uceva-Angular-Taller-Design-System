@@ -68,3 +68,12 @@ export interface NavbarIconConfig {
     /** Tamaño del icono en unidades `rem` */
     size: number;
 }
+
+/**
+ * Tipos visuales disponibles para las imágenes según Bootstrap.
+ *
+ * @remarks
+ * - `fluid` aplica la clase `img-fluid` (responsive)
+ * - `thumbnail` aplica la clase `img-thumbnail` (borde redondeado)
+ */
+export type ImageType = 'fluid' | 'thumbnail';
