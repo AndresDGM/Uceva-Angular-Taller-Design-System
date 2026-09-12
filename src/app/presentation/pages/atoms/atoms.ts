@@ -8,6 +8,10 @@ import {
   ButtonType,
   ContainerAtom,
   IconAtom,
+  ImageAtom,
+  ImageType,
+  SelectAtom,
+  SelectOption,
 } from '@brejcha13320/design-system-bootstrap';
 
 @Component({
@@ -16,6 +20,8 @@ import {
     BadgeAtom,
     ButtonAtom,
     IconAtom,
+    ImageAtom,
+    SelectAtom,
     ContainerAtom,
     CommonModule,
   ],
@@ -51,8 +57,26 @@ export class Atoms {
     { name: 'ban', size: 5 },
   ]
 
+  images: { src: string, alt: string, type: ImageType, rounded: boolean, width: number }[] = [
+    { src: 'https://placehold.co/200x200?text=Camiseta', alt: 'Producto tipo thumbnail', type: 'thumbnail', rounded: false, width: 150 },
+    { src: 'https://placehold.co/200x200?text=Jeans', alt: 'Producto tipo thumbnail redondeado', type: 'thumbnail', rounded: true, width: 150 },
+    { src: 'https://placehold.co/200x200?text=Zapatos', alt: 'Producto tipo fluido', type: 'fluid', rounded: false, width: 150 },
+  ]
+
+  selectOptions: SelectOption[] = [
+    { value: '1', label: '1 unidad' },
+    { value: '2', label: '2 unidades' },
+    { value: '3', label: '3 unidades' },
+    { value: '4', label: '4 unidades' },
+    { value: '5', label: '5 unidades' },
+  ];
+
   onClick(idButton: string){
     alert(`Click en el Boton ${idButton}`);
+  }
+
+  onSelect(value: string | string[]){
+    alert(`Seleccionado: ${value}`);
   }
 
 }

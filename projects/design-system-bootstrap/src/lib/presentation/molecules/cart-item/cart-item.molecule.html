@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row align-items-center g-3">
+      <div class="col-12 col-md-2">
+        <dsb-image-atom
+          [src]="cartItem.product.image"
+          [alt]="cartItem.product.name"
+          type="thumbnail"
+        />
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h5 class="mb-1">
+          {{ cartItem.product.name }}
+        </h5>
+
+        <p class="mb-0">
+          ${{ cartItem.product.price | number }}
+        </p>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <label
+          class="form-label"
+          [for]="'quantity-' + cartItem.product.id"
+        >
+          Cantidad
+        </label>
+
+        <dsb-select-atom
+          [id]="'quantity-' + cartItem.product.id"
+          [options]="quantityOptions"
+          [ariaLabel]="'Cantidad de ' + cartItem.product.name"
+          placeholder="Seleccionar cantidad"
+          (selected)="onQuantityChange($event)"
+        />
+      </div>
+
+      <div class="col-12 col-md-3 text-md-end">
+        <dsb-button-atom
+          text="Eliminar"
+          [idButton]="cartItem.product.id"
+          type="danger"
+          (clicker)="onRemove()"
+        />
+      </div>
+    </div>
+  </div>
+</div>

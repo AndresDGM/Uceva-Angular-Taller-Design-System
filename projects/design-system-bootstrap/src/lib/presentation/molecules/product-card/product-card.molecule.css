@@ -1,0 +1,51 @@
+.card {
+  height: 100%;
+  border: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+.card dsb-image-atom {
+  display: block;
+  min-height: 180px;
+  background-color: #f8f9fa;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.card-text {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #198754;
+}
+
+.card dsb-button-atom {
+  display: block;
+}
+
+.card dsb-badge-atom {
+  flex-shrink: 0;
+}

@@ -1,11 +1,34 @@
-<dsb-container-atom title="Button Group" >
-    <dsb-button-group-molecule 
-        [buttonsGroupData]="buttonsGroupData" 
-        (clicker)="onClick($event)" >
-    </dsb-button-group-molecule>
+<dsb-container-atom title="Button Group">
+  <dsb-button-group-molecule
+    [buttonsGroupData]="buttonsGroupData"
+    (clicker)="onClick($event)"
+  />
 </dsb-container-atom>
 
-<dsb-container-atom title="Nav Link" >
-    <dsb-nav-link-molecule [navLinks]="navLinks">
-    </dsb-nav-link-molecule>
+<dsb-container-atom title="Nav Link">
+  <dsb-nav-link-molecule
+    [navLinks]="navLinks"
+  />
+</dsb-container-atom>
+
+<dsb-container-atom title="Product Card">
+  <div class="row g-4">
+    @for (product of products; track product.id) {
+      <div class="col-12 col-md-6">
+        <dsb-product-card-molecule
+          [product]="product"
+          (addToCart)="onAddToCart($event)"
+        />
+      </div>
+    }
+  </div>
+</dsb-container-atom>
+
+<dsb-container-atom title="Cart Item">
+  <dsb-cart-item-molecule
+    [cartItem]="cartItem"
+    [quantityOptions]="quantityOptions"
+    (quantityChange)="onQuantityChange($event)"
+    (remove)="onRemove($event)"
+  />
 </dsb-container-atom>
