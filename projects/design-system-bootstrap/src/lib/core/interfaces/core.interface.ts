@@ -93,3 +93,34 @@ export interface SelectOption {
  * Tamaños disponibles para el select según Bootstrap.
  */
 export type SelectSize = 'sm' | 'lg';
+
+/**
+ * Representa un producto disponible en la tienda.
+ */
+export interface Product {
+  /** Identificador único del producto */
+  id: string;
+
+  /** Nombre visible del producto */
+  name: string;
+
+  /** Precio del producto */
+  price: number;
+
+  /** URL de la imagen del producto */
+  image: string;
+
+  /** Indica si el producto está disponible para comprar */
+  available: boolean;
+}
+
+/**
+ * Representa un producto dentro del carrito de compras.
+ */
+export interface CartItem {
+  /** Producto agregado al carrito */
+  product: Product;
+
+  /** Cantidad seleccionada del producto */
+  quantity: number;
+}
