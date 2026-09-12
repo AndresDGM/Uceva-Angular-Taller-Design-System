@@ -95,32 +95,42 @@ export interface SelectOption {
 export type SelectSize = 'sm' | 'lg';
 
 /**
- * Representa un producto disponible en la tienda.
+ * Representa un producto disponible en el catalogo de la tienda.
+ *
+ * @description
+ * Interface que define el modelo de datos de un producto dentro del dominio
+ * del comercio electronico. Es utilizada por componentes como `ProductCardMolecule`
+ * para renderizar la informacion de presentacion y disponibilidad.
  */
 export interface Product {
-  /** Identificador único del producto */
+  /** Identificador unico del producto utilizado para rastreo en el carrito y eventos de adicion/eliminacion */
   id: string;
 
-  /** Nombre visible del producto */
+  /** Nombre comercial visible del producto para mostrar en la interfaz de usuario */
   name: string;
 
-  /** Precio del producto */
+  /** Precio unitario del producto expresado en la moneda local */
   price: number;
 
-  /** URL de la imagen del producto */
+  /** URL o ruta relativa de la imagen representativa del producto */
   image: string;
 
-  /** Indica si el producto está disponible para comprar */
+  /** Indica la disponibilidad en inventario del producto (`true` disponible para compra, `false` agotado) */
   available: boolean;
 }
 
 /**
- * Representa un producto dentro del carrito de compras.
+ * Representa un elemento o producto seleccionado dentro del carrito de compras.
+ *
+ * @description
+ * Interface que agrupa la entidad de un `Product` junto con la cantidad seleccionada
+ * por el usuario. Es utilizada por `CartItemMolecule` para gestionar visualmente
+ * los items presentes en el carrito.
  */
 export interface CartItem {
-  /** Producto agregado al carrito */
+  /** Modelo del producto asociado a la entrada del carrito */
   product: Product;
 
-  /** Cantidad seleccionada del producto */
+  /** Cantidad de unidades seleccionadas de este producto en el carrito */
   quantity: number;
 }

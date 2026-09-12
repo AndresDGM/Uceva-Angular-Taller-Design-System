@@ -1,4 +1,3 @@
-<p>product-card.molecule works!</p>
 <div class="card h-100">
   <dsb-image-atom
     [src]="product.image"
@@ -25,13 +24,15 @@
       ${{ product.price | number }}
     </p>
 
-    <div class="mt-auto">
-      <dsb-button-atom
-        text="Agregar al carrito"
-        [idButton]="product.id"
-        type="primary"
-        (clicker)="onAddToCart()"
-      />
-    </div>
+    @if (product.available) {
+  <div class="mt-auto">
+    <dsb-button-atom
+      text="Agregar al carrito"
+      [idButton]="product.id"
+      type="primary"
+      (clicker)="onAddToCart()"
+    />
+  </div>
+}
   </div>
 </div>
