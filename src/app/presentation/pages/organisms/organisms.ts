@@ -33,7 +33,7 @@ export class Organisms {
     {
       product: {
         id: '1',
-        name: 'Producto de prueba 1',
+        name: 'Velez Fly Up',
         price: 25000,
         image: '/D_NQ_NP_789850-MCO86153680164_062025-O.webp',
         available: true,
@@ -43,7 +43,7 @@ export class Organisms {
     {
       product: {
         id: '2',
-        name: 'Producto de prueba 2',
+        name: 'Nike Air Jordan',
         price: 35000,
         image: '/1054565-800-auto.webp',
         available: true,
