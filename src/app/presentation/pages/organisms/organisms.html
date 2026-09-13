@@ -1,3 +1,17 @@
-<dsb-container-atom title="Navbar" >
-    <dsb-navbar-organism [navbarConfig]="navbarConfig"></dsb-navbar-organism>
+<dsb-container-atom title="Navbar">
+  <dsb-navbar-organism [navbarConfig]="navbarConfig"></dsb-navbar-organism>
+</dsb-container-atom>
+
+<dsb-container-atom title="Shopping Cart">
+  <dsb-shopping-cart-organism
+    [cartItems]="cartItems"
+    (cartItemsChange)="onCartItemsChange($event)"
+    (checkout)="onCheckout($event)">
+  </dsb-shopping-cart-organism>
+
+  @if (purchaseMessage) {
+    <div class="alert alert-success mt-3">
+      {{ purchaseMessage }}
+    </div>
+  }
 </dsb-container-atom>
