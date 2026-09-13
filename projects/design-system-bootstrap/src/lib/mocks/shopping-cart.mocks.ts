@@ -1,5 +1,13 @@
 import { CartItem } from '../core/interfaces/core.interface';
 
+/**
+ * Lista simulada de productos en el carrito para pruebas y demostraciones del Design System.
+ *
+ * @description
+ * Colección de objetos `CartItem` preconfigurados con entidades de producto (`Product`)
+ * y cantidades iniciales, utilizada para validar la visualización y operaciones reactivas
+ * dentro de `ShoppingCartOrganism`.
+ */
 export const MOCK_SHOPPING_CART_ITEMS: CartItem[] = [
   {
     product: {
@@ -23,6 +31,13 @@ export const MOCK_SHOPPING_CART_ITEMS: CartItem[] = [
   },
 ];
 
+/**
+ * Opciones simuladas para la selección de cantidad en el carrito de compras.
+ *
+ * @description
+ * Arreglo de opciones `SelectOption` utilizado para alimentar el selector de unidades
+ * en las moléculas de ítem de carrito (`CartItemMolecule`) dentro de `ShoppingCartOrganism`.
+ */
 export const MOCK_SHOPPING_CART_QUANTITY_OPTIONS = [
   { value: '1', label: '1' },
   { value: '2', label: '2' },
