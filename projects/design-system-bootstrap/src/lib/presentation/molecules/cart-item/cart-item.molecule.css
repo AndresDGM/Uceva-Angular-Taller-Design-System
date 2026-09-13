@@ -1,0 +1,67 @@
+.card {
+  border: 0;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.card h5 {
+  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #198754;
+}
+
+.form-label {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+dsb-image-atom {
+  display: block;
+}
+
+dsb-select-atom {
+  display: block;
+}
+
+dsb-button-atom {
+  display: inline-block;
+}
+
+@media (max-width: 767.98px) {
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .col-md-2,
+  .col-md-4,
+  .col-md-3 {
+    text-align: center;
+  }
+
+  .col-md-3.text-md-end {
+    text-align: center !important;
+  }
+}

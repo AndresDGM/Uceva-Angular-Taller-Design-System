@@ -26,3 +26,44 @@
         }
     </section>
 </dsb-container-atom>
+
+<dsb-container-atom title="Image" >
+    <section class="d-flex gap-3 align-items-center" >
+        @for(image of images; track image.src){
+            <dsb-image-atom 
+                [src]="image.src" 
+                [alt]="image.alt" 
+                [type]="image.type" 
+                [rounded]="image.rounded" 
+                [width]="image.width" >
+            </dsb-image-atom>
+        }
+    </section>
+</dsb-container-atom>
+
+<dsb-container-atom title="Select" >
+    <section class="d-flex gap-3 align-items-center" >
+        <dsb-select-atom 
+            [options]="selectOptions" 
+            [ariaLabel]="'Cantidad'" 
+            (selected)="onSelect($event)" >
+        </dsb-select-atom>
+        <dsb-select-atom 
+            [options]="selectOptions" 
+            size="sm" 
+            [ariaLabel]="'Talla'" 
+            (selected)="onSelect($event)" >
+        </dsb-select-atom>
+        <dsb-select-atom 
+            [options]="selectOptions" 
+            size="lg" 
+            [ariaLabel]="'Color'" 
+            (selected)="onSelect($event)" >
+        </dsb-select-atom>
+        <dsb-select-atom 
+            [options]="selectOptions" 
+            [disabled]="true" 
+            [ariaLabel]="'Select deshabilitado'" >
+        </dsb-select-atom>
+    </section>
+</dsb-container-atom>
