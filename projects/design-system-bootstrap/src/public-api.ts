@@ -21,3 +21,4 @@ export { CartItemMolecule } from './lib/presentation/molecules/cart-item/cart-it
 
 //Organisms
 export { NavbarOrganism } from './lib/presentation/organisms/navbar/navbar.organism';
+export { ShoppingCartOrganism } from './lib/presentation/organisms/shopping-cart/shopping-cart.organism';

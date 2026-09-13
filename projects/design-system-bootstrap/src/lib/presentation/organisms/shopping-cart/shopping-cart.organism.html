@@ -1,0 +1,90 @@
+<section class="shopping-cart">
+
+  <header class="shopping-cart__header">
+    <div class="shopping-cart__title">
+      <span class="shopping-cart__icon" aria-hidden="true">🛒</span>
+
+      <div>
+        <h2>Carrito de compras</h2>
+        <p>
+          {{ totalItems }}
+          {{ totalItems === 1 ? 'producto' : 'productos' }}
+        </p>
+      </div>
+    </div>
+  </header>
+
+  @if (cartItems.length > 0) {
+
+    <div class="shopping-cart__content">
+
+      <div class="shopping-cart__items">
+
+        @for (item of cartItems; track item.product.id) {
+
+          <article class="shopping-cart__item">
+            <dsb-cart-item-molecule
+              [cartItem]="item"
+              [quantityOptions]="quantityOptions"
+              (quantityChange)="onQuantityChange($event)"
+              (remove)="onRemove($event)"
+            />
+          </article>
+
+        }
+
+      </div>
+
+      <aside class="shopping-cart__summary">
+
+        <div class="shopping-cart__summary-header">
+          <h3>Resumen de compra</h3>
+          <span>{{ totalItems }} unidades</span>
+        </div>
+
+        <div class="shopping-cart__summary-row">
+          <span>Productos</span>
+          <strong>{{ totalItems }}</strong>
+        </div>
+
+        <div class="shopping-cart__divider"></div>
+
+        <div class="shopping-cart__total">
+          <span>Total</span>
+          <strong>${{ total | number }}</strong>
+        </div>
+
+        <dsb-button-atom
+          text="Comprar"
+          type="primary"
+          idButton="checkout"
+          (clicker)="onCheckout()"
+        />
+
+        <p class="shopping-cart__secure">
+          Compra segura y confiable
+        </p>
+
+      </aside>
+
+    </div>
+
+  } @else {
+
+    <div class="shopping-cart__empty">
+
+      <div class="shopping-cart__empty-icon" aria-hidden="true">
+        🛒
+      </div>
+
+      <h3>Tu carrito está vacío</h3>
+
+      <p>
+        Agrega productos para continuar con tu compra.
+      </p>
+
+    </div>
+
+  }
+
+</section>

@@ -25,8 +25,8 @@ import { ImageType } from '../../../core/interfaces/core.interface';
       [src]="src"
       [alt]="alt"
       [class]="getClass()"
-      [width]="width"
-      [height]="height"
+      [attr.width]="width"
+      [attr.height]="height"
     />
   `,
 })
