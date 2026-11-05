@@ -43,6 +43,9 @@ jobs:
       - name: Run Unit Tests
         run: npm test
 
+      - name: Build Angular Library
+        run: npx ng build design-system-bootstrap
+
       # 6. Generar build de Angular
       - name: Build Angular
         run: npx ng build Angular-Standalone-Template --base-href "/${{ github.event.repository.name }}/"
