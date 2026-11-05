@@ -45,7 +45,7 @@ jobs:
 
       # 6. Generar build de Angular
       - name: Build Angular
-        run: npm run build Angular-Standalone-Template --base-href "/${{ github.event.repository.name }}/"
+        run: ng build Angular-Standalone-Template --base-href "/${{ github.event.repository.name }}/"
 
       # 7. Subir artefacto generado
       - name: Upload artifact
