@@ -45,13 +45,9 @@ jobs:
 
       # 6. Generar build de Angular
       - name: Build Angular
-        run: npm run build -- --base-href "/${{ github.event.repository.name }}/"
-        
-      # 7. Configure SPA fallback (Opcional si no se usa el Hash)
-      - name: Configure GitHub Pages fallback
-        run: cp ./dist/design-system-bootstrap/browser/index.html ./dist/design-system-bootstrap/browser/404.html
+        run: npm run build Angular-Standalone-Template --base-href "/${{ github.event.repository.name }}/"
 
-      # 8. Subir artefacto generado
+      # 7. Subir artefacto generado
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
